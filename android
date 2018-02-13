@@ -1,0 +1,38 @@
+File Sytem
+
+/mnt/asec :- unncrypted SD card Apps
+/mnt/secure/asec :- encrypted SD card Apps
+/sytem :- System image and OS utilities
+/data :- RW system data , installed applications
+
+
+/cache :- Temporary cache for apps
+/mnt/sdcard :- SD card content pcitures music documents
+
+/data/data :- Applications installed location. It contains shared_prefs,lib,files,cache,databases. Lib files can be store separately.
+/data/app-lib :- applicaiton external lib location.
+
+/system/app :- System default apps APK files
+/data/app :- User installed Apps
+/data/data-lib :- May contain SU App libraries
+/data/dalvik-cache :- Contains unextracted and optimzed DEX file for each app dex2oat
+
+
+Android Important Files :- 
+
+/data/misc/wifi/wpa_supplicant.conf :- Contians Wifi password information
+
+/data/data/com.android.browser.provider :- browser history ..several
+
+
+Interacting with  Android activites 
+
+adb shell am start -a "android.intent.action.MAIN" -n "com.packagename/com.ActivityName"
+
+
+Android Tools :- 
+
+apktool
+
+axml2printer
+
