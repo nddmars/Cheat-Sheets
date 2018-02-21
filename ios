@@ -1,0 +1,56 @@
+iOS  :- This holds good for ios 11.0.2
+
+
+https://www.theiphonewiki.com/wiki/Main_Page :- this contains for iOS v8 and above
+
+
+NOR :- contains infrequently change OS files in root file system others are mounted in /private/var
+
+/private/var :- contains keychains, log, keybags,mobile, MobileSoftwareUpdate, preferencs
+
+plist :- contains property list plain or compressed binary format or contains embeded plist files.
+
+plistsubtractor is a tool used to uncompress
+
+/private/var/mobile/Containers/Data/Application
+
+   System plist contains information about browser history, Maps bookmark,Search History,Mail config settings
+
+/private/var/mobile/Library
+   Contains cached list of server-side folder, List of accounts in Apple Apps with encrypted passwords
+  
+  
+  /private/var/mobile/Containers/Data/Application
+      This may contain Apps data container 
+      Apps can choose to not include data in their container from an iTunes backup, so the folder won't appear in a backup. Snapchat do this, which means the container isn't backed up when you do an iTunes backup and the data inside won't be able to be accessed
+      
+ /var/containers/Bundle/Application/
+     3rd Party applications are stored here
+     
+    /private/var/mobile/Containers/Data/Application/<<ID>>/Library/Caches/Snapshots/<<App Name>>
+      contains Snapshot information
+     
+     /private/var/mobile/Library/Caches/Snapshots contains system App snapshots
+     
+     
+   General Commands :- 
+  
+   
+   ps -ax | grep 'App Name'
+   
+   Finding snapshots :- 
+           find  -type d -name Snapshots -print0 -exec echo -n / \; -exec ls {} ;
+           
+           
+  
+   
+   Finding Apps :- 
+       v find /private/var/mobile -iname 'safari'
+   
+   Decryting iOS binary
+   DYLD_INSERT_LIBRARIES=/usr/lib/dumpdecrypted.dylib /var/containers/Bundle/Application/59CEB222-4C4D-4A34-BC0F-8D38B9E3853D/MyApp.app/MyApp
+   
+   Stack information :- otool -Iv appname | grep stack
+   ARC Information :-    otool -Iv appname | grep _objc_release
+   PIE :- avatest$ otool  -Vh appname
+   
