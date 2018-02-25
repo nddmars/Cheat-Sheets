@@ -54,3 +54,5 @@ plistsubtractor is a tool used to uncompress
    ARC Information :-    otool -Iv appname | grep _objc_release
    PIE :- avatest$ otool  -Vh appname
    
+AppleConfigurator IPA Path :- 
+/Users/avatest/Library/Group Containers/K36BKF7T3D.group.com.apple.configurator/Library/Caches/Assets/TemporaryItems/MobileApps
