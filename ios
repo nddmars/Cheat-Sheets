@@ -48,7 +48,13 @@ plistsubtractor is a tool used to uncompress
        v find /private/var/mobile -iname 'safari'
    
    Decryting iOS binary
-   DYLD_INSERT_LIBRARIES=/usr/lib/dumpdecrypted.dylib /var/containers/Bundle/Application/59CEB222-4C4D-4A34-BC0F-8D38B9E3853D/MyApp.app/MyApp
+    get dumpdecrypted.dylib from GIT or http://www.willhackforsushi.com/sec575/dumpdecrypted.dylib
+    change user to mobile:
+           su mobile
+     change directory into somewhere that mobile can write to:
+         cd /var/mobile/Documents
+    
+      DYLD_INSERT_LIBRARIES=/usr/lib/dumpdecrypted.dylib /var/containers/Bundle/Application/59CEB222-4C4D-4A34-BC0F-8D38B9E3853D/MyApp.app/MyApp
    
    Stack information :- otool -Iv appname | grep stack
    ARC Information :-    otool -Iv appname | grep _objc_release
