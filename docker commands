@@ -1,0 +1,19 @@
+#Test Docker Installation 
+docker run hello world
+
+# Check all the images
+docker images
+
+# insepe
+
+#Build an image from Docker file
+docker build
+
+#Start the Docker 
+docker start
+
+#stop the Docker
+docker stop
+
+
+
